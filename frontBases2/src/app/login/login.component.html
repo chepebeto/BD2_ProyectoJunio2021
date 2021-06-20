@@ -1,0 +1,24 @@
+<br><br><br><br>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <br><br>
+      <div class="fadeIn first">
+        <img src="/assets/img/bank.jpg" id="icon" alt="User Icon" />
+      </div>  
+
+      <!--<div class="fadeIn first">        
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inicio de Sesión</h3><br>
+      </div>-->
+      
+      <!-- Register Form -->
+      <form [formGroup] = "loginForm" (ngSubmit)= "Login(loginForm.value)">       
+        <input type="text" placeholder="Usuario" formControlName="usuario"/>       
+        <input type="password" placeholder="Contraseña" formControlName="password"/><br><br>
+        <input type="submit" class="fadeIn fourth" value="INICIAR SESIÓN">
+      </form>     
+  
+    </div>
+  </div>
