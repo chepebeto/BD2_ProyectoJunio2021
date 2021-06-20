@@ -10,6 +10,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { GraficaComponent } from './grafica/grafica.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ChartsModule } from 'ng2-charts';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
     PrincipalComponent,
     GraficaComponent,
     TablaComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,   
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
