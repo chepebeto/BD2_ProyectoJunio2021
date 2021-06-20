@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaComponent implements OnInit {
 
+  listadoFinancieros:any
   constructor() { }
 
   ngOnInit(): void {
