@@ -12,6 +12,7 @@ import { TablaComponent } from './tabla/tabla.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { CargaComponent } from './carga/carga.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     GraficaComponent,
     TablaComponent,
     NotfoundComponent,
-    LineChartComponent
+    LineChartComponent,
+    CargaComponent
   ],
   imports: [
     BrowserModule,

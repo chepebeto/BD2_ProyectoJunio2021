@@ -43,4 +43,8 @@ export class MenuComponent implements OnInit {
     this._router.navigate(['/principal'])
   }
 
+  carga(){
+    this._router.navigate(['/carga'])
+  }
+
 }
