@@ -1,0 +1,30 @@
+Create database bases2;
+
+create table usuario (
+	id_usuario integer not null  AUTO_INCREMENT,
+    alias varchar(50) not null,
+    nombres varchar(50) not null,
+    apellidos varchar(50) ,
+    password varchar(100) not null,
+    PRIMARY KEY (id_usuario)
+);
+
+create table banco (
+	id_banco int not null AUTO_INCREMENT,
+    nombre varchar(100) not null,
+    PRIMARY KEY (id_banco)
+);
+
+create table perfil_financiero(
+	id_perfil int NOT NULL AUTO_INCREMENT,
+    activo bigint not null,
+    pasivo bigint not null,
+    capital bigint not null,
+    fecha  date not null,
+    mes int null,
+	anio int null,
+	ranking int not null,
+    banco int not null,
+    PRIMARY KEY (id_perfil),
+	FOREIGN KEY (banco) REFERENCES banco (id_banco)  ON UPDATE CASCADE ON DELETE CASCADE
+);
