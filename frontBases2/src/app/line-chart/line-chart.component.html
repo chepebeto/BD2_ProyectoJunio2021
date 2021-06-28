@@ -1,12 +1,6 @@
 <div class="container mt-5 pt-5">
     <div class="col-12">
 
-        <div class="row">
-            <div class="col-12 pl-12 mt-12">
-                <h1>Ranking Bancario</h1><br>                    
-            </div>            
-        </div>
-
         <div  class="row">
             <div  class="col-3">
             <select [(ngModel)]="GraficaSeleccionada">
@@ -20,10 +14,10 @@
             </div>
         </div>
         <br><br>
-        <div class="row">
+        <div class="row" >
             <div class="col-12">
                 <div class="chart-wrapper">
-                    <canvas baseChart
+                    <canvas baseChart 
                         [datasets]="lineChartData"
                         [labels] = "lineChartLabels"
                         [options] = "lineChartOptions"

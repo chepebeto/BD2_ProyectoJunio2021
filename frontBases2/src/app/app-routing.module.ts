@@ -5,6 +5,7 @@ import { TablaComponent } from './tabla/tabla.component';
 import { GraficaComponent } from './grafica/grafica.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { OtrosComponent } from './otros/otros.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'resultados', component: TablaComponent},
   {path: 'graficas', component: GraficaComponent},  
   {path: 'principal', component: PrincipalComponent},   
+  {path: 'otros', component: OtrosComponent},   
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: NotfoundComponent}
 ];
@@ -22,4 +24,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [LoginComponent, TablaComponent, GraficaComponent, PrincipalComponent, NotfoundComponent]
+export const routingComponents = [LoginComponent, TablaComponent, GraficaComponent, PrincipalComponent, NotfoundComponent, OtrosComponent]

@@ -1,0 +1,135 @@
+<app-menu></app-menu>
+<div class="container">
+<div  class="row">
+    <div  class="col-6">
+    <select [(ngModel)]="consultaSeleccionada" (change)="onChange()">
+        <option disable value="0">Seleccione una opción</option>
+        <option disable value="1">Primeros cinco bancos (Octubre 2020)</option>
+        <option disable value="2">Últimos cinco bancos (Octubre 2020)</option>
+        <option disable value="3">Primeros tres bancos (Primer Semestre a partir del 21-04-2020)</option>
+        <option disable value="4">Mejor banco (Primer Semestre a partir del 30-04-2020) </option>
+        
+      </select>
+    </div>
+    <div  class="col-3">
+      <td class="text-center"><button (click)="generarConsulta()" [disabled]="consultaSeleccionada == 0" class="btn btn-sm btn-success">Generar consulta <i class="fa fa-reply-all"></i> </button> </td>
+    </div>
+</div>
+</div>
+<br><br>
+
+<!--CONSULTA 1 Y 2-->
+<div class="container-fluid" *ngIf="consultaSeleccionada== 1 || consultaSeleccionada== 2">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-bordered border-primary" style="font-size:18px">
+            <thead class="table-active">
+              <tr>
+                <th scope="col" class="text-left">Nombre Banco</th>
+                <th scope="col" class="text-center">Posicion Ranking</th>                
+  
+              </tr>
+            </thead> 
+            <tbody>
+                <tr *ngFor="let listado of listadoOtros" style="font-size:11.475px">
+                  <th scope="col" class="text-left">{{listado.nombre}}</th>
+                  <th scope="col" class="text-center">{{listado.Ranking_octubre}}</th>                
+                </tr>
+              </tbody>            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--CONSULTA 3-->
+  <div class="container-fluid" *ngIf="consultaSeleccionada== 3">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-bordered border-primary" style="font-size:18px">
+            <thead class="table-active">
+              <tr>
+                <th scope="col" class="text-left">Nombre Banco</th>
+                <th scope="col" class="text-center">Abril</th>                
+                <th scope="col" class="text-center">Mayo</th>                
+                <th scope="col" class="text-center">Junio</th>                
+                <th scope="col" class="text-center">Julio</th>                
+                <th scope="col" class="text-center">Agosto</th>                
+                <th scope="col" class="text-center">Septiembre</th>                
+  
+              </tr>
+            </thead> 
+            <tbody>
+                <tr *ngFor="let listado of listadoOtros" style="font-size:11.475px">
+                  <th scope="col" class="text-left">{{listado.nombre}}</th>
+                  <th scope="col" class="text-center">{{listado.Abril}}</th>                
+                  <th scope="col" class="text-center">{{listado.Mayo}}</th>                
+                  <th scope="col" class="text-center">{{listado.Junio}}</th>                
+                  <th scope="col" class="text-center">{{listado.Julio}}</th>                
+                  <th scope="col" class="text-center">{{listado.Agosto}}</th>                
+                  <th scope="col" class="text-center">{{listado.Septiembre}}</th>                
+                </tr>
+              </tbody>            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--CONSULTA 4-->
+  <div class="container-fluid" *ngIf="consultaSeleccionada== 4">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-bordered border-primary" style="font-size:18px">
+            <thead>
+              <tr class="table-active">
+                <th></th>
+                <th colspan="8" scope="col" class="text-center">AÑO 2020</th>
+                <th colspan="5" scope="col" class="text-center">AÑO 2021</th>
+              </tr>
+            </thead>
+            <thead class="table-active">
+              <tr>
+                <th scope="col" class="text-left">Perfil financiero</th>
+                <th scope="col" class="text-center">Mayo</th>
+                <th scope="col" class="text-center">Junio</th>
+                <th scope="col" class="text-center">Julio</th>
+                <th scope="col" class="text-center">Agosto</th>
+                <th scope="col" class="text-center">Septiembre</th>
+                <th scope="col" class="text-center">Octubre</th>
+                <th scope="col" class="text-center">Novimebre</th>
+                <th scope="col" class="text-center">Diciembre</th>
+                <th scope="col" class="text-center">Enero</th>
+                <th scope="col" class="text-center">Febrero</th>
+                <th scope="col" class="text-center">Marzo</th>
+                <th scope="col" class="text-center">Abril</th>
+  
+              </tr>
+            </thead>            
+            <tbody >
+              <tr *ngFor="let listado of listadoOtros" style="font-size:11.475px">
+                <th scope="col" class="text-left">{{listado.nombre}}</th>
+                <th scope="col" class="text-center">{{listado.Mayo}}</th>
+                <th scope="col" class="text-center">{{listado.Junio}}</th>
+                <th scope="col" class="text-center">{{listado.Julio}}</th>
+                <th scope="col" class="text-center">{{listado.Agosto}}</th>
+                <th scope="col" class="text-center">{{listado.Septiembre}}</th>
+                <th scope="col" class="text-center">{{listado.Octubre}}</th>
+                <th scope="col" class="text-center">{{listado.Noviembre}}</th>
+                <th scope="col" class="text-center">{{listado.Diciembre}}</th>
+                <th scope="col" class="text-center">{{listado.Enero}}</th>
+                <th scope="col" class="text-center">{{listado.Febrero}}</th>
+                <th scope="col" class="text-center">{{listado.Marzo}}</th>
+                <th scope="col" class="text-center">{{listado.Abril}}</th>
+              </tr>
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

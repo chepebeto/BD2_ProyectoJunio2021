@@ -20,6 +20,10 @@ export class MenuComponent implements OnInit {
     this._router.navigate(['/graficas'])
   }
 
+  otros(){
+    this._router.navigate(['/otros'])
+  }
+  
   resultados(){
     this._router.navigate(['/resultados'])
   }
@@ -43,8 +47,6 @@ export class MenuComponent implements OnInit {
     this._router.navigate(['/principal'])
   }
 
-  carga(){
-    this._router.navigate(['/carga'])
-  }
+  
 
 }

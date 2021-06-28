@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { loginUsuario } from '../interfaces/usuario';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   })
 
   constructor(
-    private _router:Router
+    private _router:Router,
+    private _service:ApiService
   ) { }
 
   ngOnInit(): void {
@@ -35,9 +37,12 @@ export class LoginComponent implements OnInit {
 
 
   Login(formLogin: loginUsuario){    
-    console.log(formLogin.usuario)
-    console.log(formLogin.password)   
-    if (formLogin.usuario == "admin" && formLogin.password == "123456"){
+    //console.log(formLogin.usuario)
+    //console.log(formLogin.password)   
+
+    this._service.Login(formLogin.usuario, formLogin.password).subscribe(res =>{
+      console.log(res.mensaje)
+      if (res.mensaje=="OK"){    
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -46,14 +51,14 @@ export class LoginComponent implements OnInit {
         timer: 1500
       })
       sessionStorage.setItem("tipo_usuario", "admin") 
-      sessionStorage.setItem("usuario", "admin")
+      sessionStorage.setItem("usuario", formLogin.usuario)
       this._router.navigate(['/principal']) 
     }else
     {
       Swal.fire({
         position: 'top-end',
         icon: 'error',
-        title: "Existieron inconveninetes al verificar el usuario",
+        title: "Existieron inconvenientes al verificar el usuario",
         showConfirmButton: false,
         timer: 1500
       })
@@ -61,6 +66,8 @@ export class LoginComponent implements OnInit {
 
     }
     
+    })
   }
+  
 
 }
