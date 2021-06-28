@@ -2,6 +2,12 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Microsoft.AspNet.WebApi/5.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.7, 5.3.0)"
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -25,6 +31,18 @@
         },
         "runtime": {
           "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.7, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -1459,6 +1477,17 @@
     }
   },
   "libraries": {
+    "Microsoft.AspNet.WebApi/5.2.7": {
+      "sha512": "r+nQLBQ857hw8Mfb5hrlMwr0nb7BE1Fp12LsSIZ9g6NT/hTZj8CYUi2UREfywIsGPQ4EIx14oWp8QPRps/i5CA==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "microsoft.aspnet.webapi.5.2.7.nupkg.sha512",
+        "microsoft.aspnet.webapi.nuspec"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
       "type": "package",
@@ -1488,6 +1517,19 @@
         "lib/net45/System.Web.Http.xml",
         "microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
         "microsoft.aspnet.webapi.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.WebHost/5.2.7": {
+      "sha512": "m3TyD7R/cmbfXqkfgcnE0J/UEKklcPP5gsXR96//vLx2kTnsxuOqNlulJLl+Oto4fZMvhVPFZVR+KG9cLZM/PA==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.webhost/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.Web.Http.WebHost.dll",
+        "lib/net45/System.Web.Http.WebHost.xml",
+        "microsoft.aspnet.webapi.webhost.5.2.7.nupkg.sha512",
+        "microsoft.aspnet.webapi.webhost.nuspec"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -5217,7 +5259,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Microsoft.AspNet.WebApi.Core >= 5.2.7",
+      "Microsoft.AspNet.WebApi >= 5.2.7",
       "MySqlConnector >= 1.3.10",
       "Newtonsoft.Json >= 13.0.1",
       "Swashbuckle.AspNetCore >= 5.6.3",
@@ -5225,28 +5267,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alberth\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Jose Alberto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alberth\\source\\repos\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest.csproj",
+      "projectUniqueName": "E:\\Angular Projects\\bd2_proyecto\\BD2_ProyectoJunio2021\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest.csproj",
       "projectName": "web_api_proyecto_rest",
-      "projectPath": "C:\\Users\\Alberth\\source\\repos\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest.csproj",
-      "packagesPath": "C:\\Users\\Alberth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alberth\\source\\repos\\web_api_proyecto_rest\\web_api_proyecto_rest\\obj\\",
+      "projectPath": "E:\\Angular Projects\\bd2_proyecto\\BD2_ProyectoJunio2021\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest.csproj",
+      "packagesPath": "C:\\Users\\Jose Alberto\\.nuget\\packages\\",
+      "outputPath": "E:\\Angular Projects\\bd2_proyecto\\BD2_ProyectoJunio2021\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Alberth\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Jose Alberto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5271,7 +5305,7 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": {
+          "Microsoft.AspNet.WebApi": {
             "target": "Package",
             "version": "[5.2.7, )"
           },
@@ -5310,7 +5344,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -5321,6 +5355,16 @@
       "warningLevel": 1,
       "message": "El paquete \"Microsoft.AspNet.WebApi.Core 5.2.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Microsoft.AspNet.WebApi.WebHost 5.2.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Microsoft.AspNet.WebApi.WebHost",
       "targetGraphs": [
         "net5.0"
       ]
