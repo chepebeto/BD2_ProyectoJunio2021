@@ -5,14 +5,13 @@ import { TablaComponent } from './tabla/tabla.component';
 import { GraficaComponent } from './grafica/grafica.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { CargaComponent } from './carga/carga.component';
+
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'resultados', component: TablaComponent},
   {path: 'graficas', component: GraficaComponent},  
-  {path: 'principal', component: PrincipalComponent}, 
-  {path: 'carga', component: CargaComponent}, 
+  {path: 'principal', component: PrincipalComponent},   
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: NotfoundComponent}
 ];
@@ -23,4 +22,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [LoginComponent, TablaComponent, GraficaComponent, PrincipalComponent, NotfoundComponent,CargaComponent]
+export const routingComponents = [LoginComponent, TablaComponent, GraficaComponent, PrincipalComponent, NotfoundComponent]

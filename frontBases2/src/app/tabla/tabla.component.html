@@ -1,50 +1,50 @@
 <app-menu></app-menu>
-<div class="container mb-4">
+<div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-bordered border-primary" style="font-size:15px" >
                     <thead>
-                        <tr>
+                        <tr class="table-active">
                             <th></th>
-                            <th colspan="8" scope="col" class="text-left">Año 2020</th>
-                            <th colspan="5" scope="col" class="text-left">Año 2021</th>                            
+                            <th colspan="8" scope="col" class="text-center">Año 2020</th>
+                            <th colspan="5" scope="col" class="text-center">Año 2021</th>                            
                         </tr>
                     </thead>
-                    <thead>
+                    <thead class="table-active">
                         <tr>
-                            <th scope="col" class="text-left">Perfil Financiero</th>                            
-                            <th scope="col" class="text-left">Mayo</th>
-                            <th scope="col" class="text-left">Junio</th>
-                            <th scope="col" class="text-left">Julio</th>
-                            <th scope="col" class="text-left">Agosto</th>
-                            <th scope="col" class="text-left">Septiembre</th>
-                            <th scope="col" class="text-left">Octubre</th>
-                            <th scope="col" class="text-left">Noviembre</th>
-                            <th scope="col" class="text-left">Diciembre</th>
-                            <th scope="col" class="text-left">Enero</th>
-                            <th scope="col" class="text-left">Febrero</th>
-                            <th scope="col" class="text-left">Marzo</th>
-                            <th scope="col" class="text-left">Abril</th>
+                            <th scope="col" class="text-center">PERFIL FINANCIERO</th>                            
+                            <th scope="col" class="text-center">MAYO</th>
+                            <th scope="col" class="text-center">JUNIO</th>
+                            <th scope="col" class="text-center">JULIO</th>
+                            <th scope="col" class="text-center">AGOSTO</th>
+                            <th scope="col" class="text-center">SEPTIEMBRE</th>
+                            <th scope="col" class="text-center">OCTUBRE</th>
+                            <th scope="col" class="text-center">NOVIEMBRE</th>
+                            <th scope="col" class="text-center">DICIEMBRE</th>
+                            <th scope="col" class="text-center">ENERO</th>
+                            <th scope="col" class="text-center">FEBRERO</th>
+                            <th scope="col" class="text-center">MARZO</th>
+                            <th scope="col" class="text-center">ABRIL</th>
                             
                         </tr>
                     </thead>
                     <tbody>                                              
-                        <!--<tr *ngFor="let listado of listadoFinancieros">-->
-                        <tr>
-                            <th scope="col" class="text-left">Banco</th>
-                            <th scope="col" class="text-left">1</th>
-                            <th scope="col" class="text-left">2</th>
-                            <th scope="col" class="text-left">3</th>
-                            <th scope="col" class="text-left">4</th>
-                            <th scope="col" class="text-left">5</th>
-                            <th scope="col" class="text-left">6</th>
-                            <th scope="col" class="text-left">7</th>
-                            <th scope="col" class="text-left">8</th>
-                            <th scope="col" class="text-left">9</th>
-                            <th scope="col" class="text-left">10</th>
-                            <th scope="col" class="text-left">11</th>
-                            <th scope="col" class="text-left">12</th>                            
+                        <tr *ngFor="let listado of listadoFinancieros" style="font-size:9px">
+                        <!--<tr>-->
+                            <th scope="col" class="text-right">{{listado.nombre}}</th>
+                            <th scope="col" class="text-right">{{listado.Mayo|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Junio|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Julio|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Agosto|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Septiembre|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Octubre|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Noviembre|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Diciembre|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Enero|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Febrero|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Marzo|currency:'Q.'}}</th>
+                            <th scope="col" class="text-right">{{listado.Abril|currency:'Q.'}}</th>
                         </tr>
                      
                     </tbody>
@@ -52,5 +52,5 @@
             </div>            
         </div>  
   </div>            
-</div> 
+</div>
 

@@ -12,7 +12,7 @@ import { TablaComponent } from './tabla/tabla.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { CargaComponent } from './carga/carga.component';
+import { HttpClientModule }  from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,15 +23,15 @@ import { CargaComponent } from './carga/carga.component';
     GraficaComponent,
     TablaComponent,
     NotfoundComponent,
-    LineChartComponent,
-    CargaComponent
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,   
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

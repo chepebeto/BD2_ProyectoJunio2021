@@ -23,7 +23,7 @@ namespace web_api_proyecto_rest.Controllers
 
             string vrlCadUsuario = JsonConvert.SerializeObject(vrlUsuario);
            // RequestModel vrlUsuario = JsonConvert.DeserializeObject<RequestModel>(datos);
-            string vrlCadUsuarioS = "select nombre, format(Mayo,2) as Mayo,format(Junio,2) as Junio  , format(Julio, 2) as Julio,format(Agosto, 2) as Agosto ,format(Septiembre, 2) as Septiembre,format(Octubre, 2) as Octubre ,format(Noviembre, 2) as Noviembre,format(Diciembre, 2) as Diciembre ,format(Enero, 2) as Enero,format(Febrero, 2) as Febrero ,format(Marzo, 2) as Marzo ,format(Abril,2) as Abril from bases2.vista_general order by Mayo desc; ";
+            string vrlCadUsuarioS = "select nombre, Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre,Enero,Febrero,Marzo,Abril from bases2.vista_general order by Mayo desc; ";
 
             string vrlConsulta1 = IOConsultaService.fn_ranking(vrlCadUsuarioS);
             string vrlError = string.Empty;

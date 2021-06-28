@@ -1,11 +1,22 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "FWfPgT7F7Z8pyx6b1Ub7FISdYe0vxU2lulM9krZE0erBAViXG6PszMDtgAXs8VGDwfXJlH0x0kRSzcjsmmEc5g==",
   "success": true,
   "projectFilePath": "E:\\Angular Projects\\bd2_proyecto\\BD2_ProyectoJunio2021\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
+=======
+  "dgSpecHash": "czqY6nveV5jJaujXFlkoDqt6ZZkWuaWsYFmEyzMz2X+ljb9RwfToZH67R4bEpd8OzWNfyFvRFWH2C7EczDuTVw==",
+  "success": true,
+  "projectFilePath": "E:\\Angular Projects\\bd2_proyecto\\BD2_ProyectoJunio2021\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest\\web_api_proyecto_rest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.aspnet.webapi\\5.2.7\\microsoft.aspnet.webapi.5.2.7.nupkg.sha512",
+    "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
+    "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.aspnet.webapi.webhost\\5.2.7\\microsoft.aspnet.webapi.webhost.5.2.7.nupkg.sha512",
+>>>>>>> feature/ConsumoApi
     "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.netcore.platforms\\6.0.0-preview.1.21102.12\\microsoft.netcore.platforms.6.0.0-preview.1.21102.12.nupkg.sha512",
     "C:\\Users\\Jose Alberto\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -104,6 +115,16 @@
       "warningLevel": 1,
       "message": "El paquete \"Microsoft.AspNet.WebApi.Core 5.2.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Microsoft.AspNet.WebApi.WebHost 5.2.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Microsoft.AspNet.WebApi.WebHost",
       "targetGraphs": [
         "net5.0"
       ]
