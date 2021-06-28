@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ChartDataSets } from 'chart.js'
 import {Color, Label} from 'ng2-charts'
-import { RespuestaRanking } from '../modules/interfaces'
+import { Respuesta } from '../modules/interfaces'
 import { ApiService } from '../services/api.service'
 
 @Component({
@@ -20,7 +20,17 @@ export class LineChartComponent implements OnInit {
 
   lineChartOptions:any = {responsive: true,
     title:{text: 'Ranking Bancario'},
-    legend: {position: 'bottom'}
+    legend: {position: 'right'},
+    scales: {
+      yAxes: [
+        {
+          scaleLabel: "<%= ' $' + Number(value)%>"/*{
+            display: true,
+            labelString: '1k = 1000'
+          }*/
+        }
+      ]
+    }
   }
 
 
@@ -55,7 +65,8 @@ export class LineChartComponent implements OnInit {
     for (let listado of this.listadoFinancieros){     
       this.lineChartData.push({
         data: 
-        [ listado.Mayo,
+        [ 
+          listado.Mayo,
           listado.Junio,          
           listado.Julio,
           listado.Agosto,
@@ -73,10 +84,10 @@ export class LineChartComponent implements OnInit {
     
   }
 
-  ObtenerDetalleRankign(){
+  ObtenerDetalleCapital(){
     this.listadoFinancieros=[]
-    this.servicio.ObtenerRanking().subscribe(res =>{
-      let respuesta: RespuestaRanking
+    this.servicio.ObtenerRankingCapital().subscribe(res =>{
+      let respuesta: Respuesta
       let respuesta2: any
       respuesta = res
       this.stringJson = JSON.stringify(respuesta.json)
@@ -86,15 +97,37 @@ export class LineChartComponent implements OnInit {
         this.listadoFinancieros.push(entry) 
       }      
       this.generarDatos()
-    })
-    
+    })    
+  }
+
+
+  ObtenerDetalleRanking(){
+    this.listadoFinancieros=[]
+    this.servicio.ObtenerRankingPosicion().subscribe(res =>{
+      let respuesta: Respuesta
+      let respuesta2: any
+      respuesta = res
+      this.stringJson = JSON.stringify(respuesta.json)
+      this.stringJson2 = JSON.parse(this.stringJson)           
+      respuesta2 = JSON.parse(this.stringJson2)            
+      for (let entry of respuesta2){                
+        this.listadoFinancieros.push(entry) 
+      }      
+      this.generarDatos()
+    })    
   }
 
 
   generarGrafica(){
     if (this.GraficaSeleccionada==1){
-      this.ObtenerDetalleRankign()
+      this.ObtenerDetalleCapital()
+    }else if (this.GraficaSeleccionada==2){
+    this.ObtenerDetalleRanking()
     }
   }
+
+
+
+  
 
 }

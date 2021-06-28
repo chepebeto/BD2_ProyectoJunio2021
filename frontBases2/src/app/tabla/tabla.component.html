@@ -1,56 +1,89 @@
 <app-menu></app-menu>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-bordered border-primary" style="font-size:15px" >
-                    <thead>
-                        <tr class="table-active">
-                            <th></th>
-                            <th colspan="8" scope="col" class="text-center">Año 2020</th>
-                            <th colspan="5" scope="col" class="text-center">Año 2021</th>                            
-                        </tr>
-                    </thead>
-                    <thead class="table-active">
-                        <tr>
-                            <th scope="col" class="text-center">PERFIL FINANCIERO</th>                            
-                            <th scope="col" class="text-center">MAYO</th>
-                            <th scope="col" class="text-center">JUNIO</th>
-                            <th scope="col" class="text-center">JULIO</th>
-                            <th scope="col" class="text-center">AGOSTO</th>
-                            <th scope="col" class="text-center">SEPTIEMBRE</th>
-                            <th scope="col" class="text-center">OCTUBRE</th>
-                            <th scope="col" class="text-center">NOVIEMBRE</th>
-                            <th scope="col" class="text-center">DICIEMBRE</th>
-                            <th scope="col" class="text-center">ENERO</th>
-                            <th scope="col" class="text-center">FEBRERO</th>
-                            <th scope="col" class="text-center">MARZO</th>
-                            <th scope="col" class="text-center">ABRIL</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>                                              
-                        <tr *ngFor="let listado of listadoFinancieros" style="font-size:9px">
-                        <!--<tr>-->
-                            <th scope="col" class="text-right">{{listado.nombre}}</th>
-                            <th scope="col" class="text-right">{{listado.Mayo|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Junio|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Julio|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Agosto|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Septiembre|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Octubre|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Noviembre|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Diciembre|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Enero|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Febrero|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Marzo|currency:'Q.'}}</th>
-                            <th scope="col" class="text-right">{{listado.Abril|currency:'Q.'}}</th>
-                        </tr>
-                     
-                    </tbody>
-                </table>
-            </div>            
-        </div>  
-  </div>            
-</div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <select [(ngModel)]="infoSeleccionada" (change)="onChange()">
+        <option disable value="0">Seleccione una opción</option>
+        <option disable value="1">Por Activo</option>
+        <option disable value="2">Por Ranking</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <td class="text-center"><button (click)="generarTabla()" [disabled]="infoSeleccionada == 0"
+          class="btn btn-sm btn-success">Generar Información <i class="fa fa-reply-all"></i> </button> </td>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-bordered border-primary" style="font-size:18px">
+          <thead>
+            <tr class="table-active">
+              <th></th>
+              <th colspan="8" scope="col" class="text-center">AÑO 2020</th>
+              <th colspan="5" scope="col" class="text-center">AÑO 2021</th>
+            </tr>
+          </thead>
+          <thead class="table-active">
+            <tr>
+              <th scope="col" class="text-left">Perfil financiero</th>
+              <th scope="col" class="text-center">Mayo</th>
+              <th scope="col" class="text-center">Junio</th>
+              <th scope="col" class="text-center">Julio</th>
+              <th scope="col" class="text-center">Agosto</th>
+              <th scope="col" class="text-center">Septiembre</th>
+              <th scope="col" class="text-center">Octubre</th>
+              <th scope="col" class="text-center">Novimebre</th>
+              <th scope="col" class="text-center">Diciembre</th>
+              <th scope="col" class="text-center">Enero</th>
+              <th scope="col" class="text-center">Febrero</th>
+              <th scope="col" class="text-center">Marzo</th>
+              <th scope="col" class="text-center">Abril</th>
+
+            </tr>
+          </thead>
+          <tbody *ngIf="infoSeleccionada== 1">
+            <tr *ngFor="let listado of listadoFinancieros" style="font-size:11px">
+              <th scope="col" class="text-left">{{listado.nombre}}</th>
+              <th scope="col" class="text-right">{{listado.Mayo|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Junio|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Julio|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Agosto|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Septiembre|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Octubre|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Noviembre|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Diciembre|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Enero|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Febrero|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Marzo|currency:'Q.'}}</th>
+              <th scope="col" class="text-right">{{listado.Abril|currency:'Q.'}}</th>
+            </tr>
+          </tbody>
+          <tbody *ngIf="infoSeleccionada== 2">
+            <tr *ngFor="let listado of listadoFinancieros" style="font-size:11.475px">
+              <th scope="col" class="text-left">{{listado.nombre}}</th>
+              <th scope="col" class="text-center">{{listado.Mayo}}</th>
+              <th scope="col" class="text-center">{{listado.Junio}}</th>
+              <th scope="col" class="text-center">{{listado.Julio}}</th>
+              <th scope="col" class="text-center">{{listado.Agosto}}</th>
+              <th scope="col" class="text-center">{{listado.Septiembre}}</th>
+              <th scope="col" class="text-center">{{listado.Octubre}}</th>
+              <th scope="col" class="text-center">{{listado.Noviembre}}</th>
+              <th scope="col" class="text-center">{{listado.Diciembre}}</th>
+              <th scope="col" class="text-center">{{listado.Enero}}</th>
+              <th scope="col" class="text-center">{{listado.Febrero}}</th>
+              <th scope="col" class="text-center">{{listado.Marzo}}</th>
+              <th scope="col" class="text-center">{{listado.Abril}}</th>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

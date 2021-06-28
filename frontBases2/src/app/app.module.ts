@@ -13,6 +13,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { HttpClientModule }  from '@angular/common/http';
+import { OtrosComponent } from './otros/otros.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule }  from '@angular/common/http';
     GraficaComponent,
     TablaComponent,
     NotfoundComponent,
-    LineChartComponent
+    LineChartComponent,
+    OtrosComponent
   ],
   imports: [
     BrowserModule,
